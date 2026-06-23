@@ -1,0 +1,316 @@
+﻿<Window x:Class="VeteransBannerCRM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Veterans Banner CRM" Height="850" Width="1100">
+
+    <TabControl>
+        <TabItem Header="Banner Orders">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Veterans Banner CRM"
+                       FontSize="26"
+                       FontWeight="Bold"
+                       Margin="0,0,0,15"/>
+
+            <!-- Veteran Information -->
+            <GroupBox Header="Veteran Information" Grid.Row="1" Padding="10" Margin="0,0,0,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Season:" VerticalAlignment="Center"/>
+
+                    <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="5">
+                        <ComboBox x:Name="cmbSeasonName" Width="120">
+                            <ComboBoxItem Content="Spring"/>
+                            <ComboBoxItem Content="Summer"/>
+                            <ComboBoxItem Content="Fall"/>
+                            <ComboBoxItem Content="Winter"/>
+                            <ComboBoxItem Content="Veterans Day"/>
+                            <ComboBoxItem Content="Memorial Day"/>
+                        </ComboBox>
+
+                        <ComboBox x:Name="cmbSeasonYear" Width="100" Margin="10,0,0,0">
+                            <ComboBoxItem Content="2026"/>
+                            <ComboBoxItem Content="2027"/>
+                            <ComboBoxItem Content="2028"/>
+                            <ComboBoxItem Content="2029"/>
+                            <ComboBoxItem Content="2030"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="Location:" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="cmbLocation" Grid.Row="0" Grid.Column="3" Margin="5">
+                        <ComboBoxItem Content="Edgefield"/>
+                        <ComboBoxItem Content="Johnston"/>
+                        <ComboBoxItem Content="Trenton"/>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="First Name:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtFirstName" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="Last Name:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtLastName" Grid.Row="1" Grid.Column="3" Margin="5"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Branch:" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="cmbBranch" Grid.Row="2" Grid.Column="1" Margin="5">
+                        <ComboBoxItem Content="Army"/>
+                        <ComboBoxItem Content="Navy"/>
+                        <ComboBoxItem Content="Air Force"/>
+                        <ComboBoxItem Content="Marine Corps"/>
+                        <ComboBoxItem Content="Coast Guard"/>
+                        <ComboBoxItem Content="Space Force"/>
+                        <ComboBoxItem Content="National Guard"/>
+                        <ComboBoxItem Content="Other"/>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="War/Conflict:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtWarConflict" Grid.Row="2" Grid.Column="3" Margin="5"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Medals:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtMedals" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+                    <StackPanel Grid.Row="3" Grid.Column="3" Orientation="Horizontal" Margin="5">
+                        <RadioButton x:Name="rbLiving" Content="Living" Margin="0,0,15,0"/>
+                        <RadioButton x:Name="rbDeceased" Content="Deceased" Margin="0,0,15,0"/>
+                        <CheckBox x:Name="chkKIA" Content="KIA"/>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+
+            <!-- Contact Information -->
+            <GroupBox Header="Contact Information" Grid.Row="2" Padding="10" Margin="0,0,0,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Contact:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtContact" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="Phone:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtPhone" Grid.Row="0" Grid.Column="3" Margin="5"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Email:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtEmail" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="Address:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtAddress" Grid.Row="1" Grid.Column="3" Margin="5"/>
+                </Grid>
+            </GroupBox>
+
+            <!-- Banner Information -->
+            <GroupBox Header="Banner Information" Grid.Row="3" Padding="10" Margin="0,0,0,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Paired With:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtPairedWith" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="Misc:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtMisc" Grid.Row="0" Grid.Column="3" Margin="5"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Name On Banner:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtNameOnBanner" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Banner Type:" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="cmbBannerType" Grid.Row="2" Grid.Column="1" Margin="5">
+                        <ComboBoxItem Content="Single-Sided"/>
+                        <ComboBoxItem Content="Double-Sided"/>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="Photo Layout:" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="cmbPhotoLayout" Grid.Row="2" Grid.Column="3" Margin="5">
+                        <ComboBoxItem Content="One Photo"/>
+                        <ComboBoxItem Content="Same Photo Both Sides"/>
+                        <ComboBoxItem Content="Different Photo Each Side"/>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Notes:" VerticalAlignment="Top" Margin="0,8,0,0"/>
+                    <TextBox x:Name="txtNotes"
+                 Grid.Row="3"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="3"
+                 Margin="5"
+                 Height="70"
+                 AcceptsReturn="True"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto"/>
+                </Grid>
+            </GroupBox>
+
+            <StackPanel Grid.Row="4"
+                Orientation="Horizontal"
+                Margin="0,0,0,10">
+                    <Button x:Name="btnSave"
+                        Content="Save Banner Order"
+                        Width="150"
+                        Height="35"
+                        Click="btnSave_Click"/>
+
+                    <Button x:Name="btnDelete"
+                        Content="Delete Order"
+                        Width="150"
+                        Height="35"
+                        Margin="10,0,0,0"
+                        Click="btnDelete_Click"/>
+
+                    <Button x:Name="btnExport"
+                        Content="Export To Excel"
+                        Width="150"
+                        Height="35"
+                        Margin="10,0,0,0"
+                        Click="btnExport_Click"/>
+
+                    <Button x:Name="btnImport"
+                        Content="Import Excel"
+                        Width="150"
+                        Height="35"
+                        Margin="10,0,0,0"
+                        Click="btnImport_Click"/>
+
+                    <Button x:Name="btnSaveImport"
+                        Content="Save Import"
+                        Width="150"
+                        Height="35"
+                        Margin="10,0,0,0"
+                        Click="btnSaveImport_Click"/>
+
+                    <Button x:Name="btnBackup"
+                        Content="Backup Database"
+                        Width="150"
+                        Height="35"
+                        Margin="10,0,0,0"
+                        Click="btnBackup_Click"/>
+                    </StackPanel>
+
+            <GroupBox Header="Banner Orders" Grid.Row="5" Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock Text="Season:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+
+                        <ComboBox x:Name="cmbSeasonFilter"
+                                  Width="160"
+                                  Margin="0,0,20,0"
+                                  SelectionChanged="cmbSeasonFilter_SelectionChanged">
+                            <ComboBoxItem Content="All"/>
+                        </ComboBox>
+
+                        <TextBlock Text="Search:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+
+                        <TextBox x:Name="txtSearch"
+                             Width="300"
+                             TextChanged="txtSearch_TextChanged"/>
+                    </StackPanel>
+
+                    <DataGrid x:Name="dgVeterans"
+                              Grid.Row="1"
+                              AutoGenerateColumns="True"
+                              SelectionChanged="dgVeterans_SelectionChanged"/>
+
+                </Grid>
+            </GroupBox>
+        </Grid>
+            </ScrollViewer>
+        </TabItem>
+
+        <TabItem Header="Dashboard">
+            <Grid Margin="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Dashboard"
+                       FontSize="26"
+                       FontWeight="Bold"
+                       Margin="0,0,0,15"/>
+
+                <StackPanel Grid.Row="1" Margin="0,0,0,10">
+
+                    <TextBlock Text="Financial Tracking"
+               FontSize="18"
+               FontWeight="Bold"/>
+
+                    <TextBlock x:Name="txtBalance"
+               FontSize="16"
+               Margin="0,10,0,10"/>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <ComboBox x:Name="cmbFinancialSeason"
+                  Width="150"
+                  Margin="0,0,10,0"/>
+
+                        <TextBox x:Name="txtDeductionDescription"
+                 Width="250"
+                 Margin="0,0,10,0"/>
+
+                        <TextBox x:Name="txtDeductionAmount"
+                 Width="100"
+                 Margin="0,0,10,0"/>
+
+                        <Button x:Name="btnAddDeduction"
+                Content="Add Deduction"
+                Click="btnAddDeduction_Click"/>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <TextBox x:Name="txtDashboard"
+                         Grid.Row="2"
+                         FontFamily="Consolas"
+                         FontSize="14"
+                         IsReadOnly="True"
+                         TextWrapping="Wrap"
+                         VerticalScrollBarVisibility="Auto"/>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>

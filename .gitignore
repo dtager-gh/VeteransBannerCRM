@@ -1,0 +1,15 @@
+.vs/
+bin/
+obj/
+
+*.db
+*.sqlite
+
+backups/
+exports/
+photos/
+invoices/
+order_forms/
+
+*.user
+*.suo
