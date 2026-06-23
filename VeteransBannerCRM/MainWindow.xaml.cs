@@ -149,6 +149,18 @@ namespace VeteransBannerCRM
             LoadDashboard();
         }
 
+        private void btnNewOrder_Click(object sender, RoutedEventArgs e)
+        {
+            ClearForm();
+
+            dgVeterans.SelectedItem = null;
+
+            isImportPreview = false;
+            selectedImportIndex = -1;
+
+            LoadBannerOrders(txtSearch.Text);
+        }
+
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
             if (dgVeterans.ItemsSource is not IEnumerable<BannerOrder> orders)
@@ -429,27 +441,21 @@ namespace VeteransBannerCRM
             cmbSeasonName.SelectedIndex = -1;
             cmbSeasonYear.SelectedIndex = -1;
 
-            foreach (ComboBoxItem item in cmbSeasonName.Items)
+            if (string.IsNullOrWhiteSpace(cleanSeason))
             {
-                string seasonName = item.Content?.ToString() ?? "";
-
-                if (cleanSeason.StartsWith(seasonName))
-                {
-                    cmbSeasonName.SelectedItem = item;
-                    break;
-                }
+                cmbSeasonName.Text = "";
+                cmbSeasonYear.Text = "";
+                return;
             }
 
-            foreach (ComboBoxItem item in cmbSeasonYear.Items)
-            {
-                string year = item.Content?.ToString() ?? "";
+            string[] parts = cleanSeason.Split(' ');
 
-                if (cleanSeason.Contains(year))
-                {
-                    cmbSeasonYear.SelectedItem = item;
-                    break;
-                }
-            }
+            string year = parts.LastOrDefault(p => int.TryParse(p, out _)) ?? "";
+
+            string seasonName = cleanSeason.Replace(year, "").Trim();
+
+            cmbSeasonName.Text = seasonName;
+            cmbSeasonYear.Text = year;
         }
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)

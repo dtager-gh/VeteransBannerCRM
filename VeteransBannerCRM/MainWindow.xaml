@@ -195,6 +195,13 @@
                         Margin="10,0,0,0"
                         Click="btnDelete_Click"/>
 
+                    <Button x:Name="btnNewOrder"
+                        Content="New Order"
+                        Width="150"
+                        Height="35"
+                        Margin="10,0,0,0"
+                        Click="btnNewOrder_Click"/>
+
                     <Button x:Name="btnExport"
                         Content="Export To Excel"
                         Width="150"
