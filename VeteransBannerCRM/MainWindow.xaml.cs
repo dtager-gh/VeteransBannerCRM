@@ -415,11 +415,8 @@ namespace VeteransBannerCRM
 
         private string GetSeason()
         {
-            string seasonName =
-                ((ComboBoxItem)cmbSeasonName.SelectedItem)?.Content?.ToString() ?? "";
-
-            string seasonYear =
-                ((ComboBoxItem)cmbSeasonYear.SelectedItem)?.Content?.ToString() ?? "";
+            string seasonName = cmbSeasonName.Text;
+            string seasonYear = cmbSeasonYear.Text;
 
             return TextNormalizer.CleanText($"{seasonName} {seasonYear}");
         }

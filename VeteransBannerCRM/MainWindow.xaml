@@ -41,7 +41,7 @@
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="Season:" VerticalAlignment="Center"/>
 
                     <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="5">
-                        <ComboBox x:Name="cmbSeasonName" Width="120">
+                                <ComboBox x:Name="cmbSeasonName" Width="120" IsEditable="True">
                             <ComboBoxItem Content="Spring"/>
                             <ComboBoxItem Content="Summer"/>
                             <ComboBoxItem Content="Fall"/>
@@ -50,7 +50,7 @@
                             <ComboBoxItem Content="Memorial Day"/>
                         </ComboBox>
 
-                        <ComboBox x:Name="cmbSeasonYear" Width="100" Margin="10,0,0,0">
+                            <ComboBox x:Name="cmbSeasonYear" Width="100" Margin="10,0,0,0" IsEditable="True">
                             <ComboBoxItem Content="2026"/>
                             <ComboBoxItem Content="2027"/>
                             <ComboBoxItem Content="2028"/>
