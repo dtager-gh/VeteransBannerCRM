@@ -472,7 +472,7 @@ namespace VeteransBannerCRM
             var deductionsList = FinancialRepository.GetAll();
             int totalOrders = DashboardRepository.GetTotalOrders();
 
-            decimal revenue = totalOrders * 60m;
+            decimal revenue = DashboardRepository.GetTotalRevenue();
 
             decimal deductions = FinancialRepository.GetTotalDeductions();
 

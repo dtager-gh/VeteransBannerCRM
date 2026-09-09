@@ -92,5 +92,30 @@ namespace VeteransBannerCRM.Data
 
             return counts;
         }
+
+        public static decimal GetTotalRevenue()
+        {
+            using var connection =
+                new SqliteConnection(Database.ConnectionString);
+
+            connection.Open();
+
+            var command = connection.CreateCommand();
+
+            command.CommandText =
+            @"
+              SELECT COALESCE(
+              SUM(
+                  CASE
+                  WHEN LOWER(BannerType) LIKE '%double%' THEN 120
+                  ELSE 60
+                  END
+                  ),
+                  0 )
+               FROM BannerOrders;
+            ";
+
+            return Convert.ToDecimal(command.ExecuteScalar());
+        }
     }
 }
